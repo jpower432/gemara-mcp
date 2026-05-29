@@ -24,9 +24,11 @@ jobs:
       release-config-name: release-drafter.yml
       goreleaser-config-path: .goreleaser.yaml
       go-version-file: go.mod
+      image-name: "gemaraproj/gemara-mcp"
       create-attestation: true
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
+      image-registry-password: ${{ secrets.GITHUB_TOKEN }}
 
   nfr6-eval:
     needs: release
